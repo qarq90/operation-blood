@@ -38,20 +38,18 @@ export default function Client() {
 
     return (
         <main className="min-h-screen">
-            <section className="px-6 pt-24 sm:px-10 lg:px-16 lg:pt-20">
-                <div className="max-w-4xl">
-                    <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-8xl">
-                        Need help?
-                        <br />
-                        <span className="text-red-500">We're here.</span>
-                    </h1>
+            <section className="pt-24 sm:px-10 lg:pt-20 max-w-7xl">
+                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-7xl">
+                    Need help?
+                    <br />
+                    <span className="text-red-500">We're here.</span>
+                </h1>
 
-                    <p className="mt-8 max-w-2xl text-lg leading-8 text-foreground/60">
-                        Have a question about blood donation, blood requests,
-                        your account, or the HAEMA platform? Send us a message
-                        and we'll help you find the right information.
-                    </p>
-                </div>
+                <p className="mt-8 max-w-2xl text-lg leading-8 text-foreground/75">
+                    Have a question about blood donation, blood requests, your
+                    account, or the HAEMA platform? Send us a message and we'll
+                    help you find the right information.
+                </p>
             </section>
 
             <section className="mx-auto pt-12 px-6 sm:px-10 lg:px-16 lg:pt-20">
@@ -87,7 +85,7 @@ export default function Client() {
                         </div>
 
                         <div className="mt-10">
-                            <p className="text-sm font-semibold text-foreground/80">
+                            <p className="text-sm font-semibold text-foreground/75">
                                 Medical emergencies
                             </p>
 

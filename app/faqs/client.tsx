@@ -487,15 +487,17 @@ const sections: FAQSection[] = [
 export default function Client() {
     return (
         <main className="min-h-screen">
-            <h1 className="text-4xl pl-10 pt-24 font-bold sm:text-5xl lg:text-6xl">
-                Frequently Asked Questions
-            </h1>
+            <section className="pt-24 sm:px-10 lg:pt-20 max-w-7xl">
+                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-7xl">
+                    Frequently Asked Questions
+                </h1>
+            </section>
 
             <div className="mx-auto px-6 sm:px-8 lg:px-10 lg:pt-12">
                 <div className="grid grid-cols-1 gap-12 lg:grid-cols-[240px_minmax(0,1fr)] z-50">
                     <aside className="hidden lg:block">
                         <div className="sticky top-14">
-                            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-foreground/60">
+                            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-foreground/75">
                                 On this page
                             </p>
 
@@ -505,7 +507,7 @@ export default function Client() {
                                         <a
                                             key={section.id}
                                             href={`#${section.id}`}
-                                            className="group flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-foreground/60 transition hover:text-foreground"
+                                            className="group flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-foreground/75 transition hover:text-foreground"
                                         >
                                             <span className="font-mono text-xs">
                                                 {section.number}
@@ -532,7 +534,7 @@ export default function Client() {
                                     </span>
 
                                     <div className="min-w-0 flex-1">
-                                        <h2 className="text-2xl pb-4 font-bold tracking-tight text-foreground/80 sm:text-3xl">
+                                        <h2 className="text-2xl pb-4 font-bold tracking-tight text-foreground/75 sm:text-3xl">
                                             {section.title}
                                         </h2>
 
@@ -544,7 +546,7 @@ export default function Client() {
                                                             key={index}
                                                             className="group"
                                                         >
-                                                            <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-base font-semibold text-foreground/80 transition hover:text-foreground [&::-webkit-details-marker]:hidden">
+                                                            <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-base font-semibold text-foreground/75 transition hover:text-foreground [&::-webkit-details-marker]:hidden">
                                                                 <span>
                                                                     {
                                                                         faq.question
@@ -556,7 +558,7 @@ export default function Client() {
                                                                 </span>
                                                             </summary>
 
-                                                            <div className="pb-6 pr-8 text-sm leading-7 text-foreground/60">
+                                                            <div className="pb-6 pr-8 text-sm leading-7 text-foreground/75">
                                                                 {faq.answer}
                                                             </div>
                                                         </details>

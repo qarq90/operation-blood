@@ -13,6 +13,7 @@ import {
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import path from "path";
 
 const items = [
     { label: "Home", Icon: FiHome, path: "/" },
@@ -66,6 +67,8 @@ export const Sidebar = () => {
         document.startViewTransition(commit);
     };
 
+    if (pathname.includes("/auth")) return
+
     return (
         <nav className="w-32 h-dvh text-white flex flex-col items-center justify-center fixed top-0 left-0 z-50">
             <ul className="flex flex-col items-center gap-8">
@@ -80,7 +83,7 @@ export const Sidebar = () => {
                             href={path}
                             key={label}
                             className={`
-                                    relative group px-3 pt-3 pb-2 cursor-pointer rounded-full transition-colors duration-200 border border-theme/25
+                                    relative group px-3 pt-3 pb-2 cursor-pointer rounded-full transition-colors duration-200
                                     ${
                                         isActive
                                             ? "bg-red-600 text-white"

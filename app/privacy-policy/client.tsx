@@ -127,11 +127,11 @@ function Section({ id, number, title, children }: SectionProps) {
                 </span>
 
                 <div className="min-w-0 flex-1 flex flex-col gap-4">
-                    <h2 className="text-2xl font-bold tracking-tight text-foreground/80 sm:text-3xl">
+                    <h2 className="text-2xl font-bold tracking-tight text-foreground/75 sm:text-3xl">
                         {title}
                     </h2>
 
-                    <div className="mt-6 space-y-5 leading-7 text-foreground/60">
+                    <div className="mt-6 space-y-5 leading-7 text-foreground/75">
                         {children}
                     </div>
                 </div>
@@ -143,15 +143,17 @@ function Section({ id, number, title, children }: SectionProps) {
 export default function Client() {
     return (
         <main className="min-h-screen">
-            <h1 className="text-4xl pl-10 pt-24 font-bold sm:text-5xl lg:text-6xl">
-                Privacy Policy
-            </h1>
+           <section className="pt-24 sm:px-10 lg:pt-20 max-w-7xl">
+                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-7xl">
+                    Privacy Policy
+                </h1>
+            </section>
 
             <div className="mx-auto px-6 sm:px-8 lg:px-10 lg:pt-12">
                 <div className="grid grid-cols-1 gap-12 lg:grid-cols-[240px_minmax(0,1fr)] z-50">
                     <aside className="hidden lg:block">
                         <div className="sticky top-14">
-                            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-foreground/60">
+                            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-foreground/75">
                                 On this page
                             </p>
 
@@ -161,7 +163,7 @@ export default function Client() {
                                         <a
                                             key={section.id}
                                             href={`#${section.id}`}
-                                            className="group flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-foreground/60 transition hover:text-foreground"
+                                            className="group flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-foreground/75 transition hover:text-foreground"
                                         >
                                             <span className="font-mono text-xs">
                                                 {section.number}
@@ -177,7 +179,7 @@ export default function Client() {
 
                     <article className="min-w-0 rounded-2xl px-6 shadow-sm sm:px-10 lg:px-12">
                         <div className="border-b border-foreground/10 my-2 pb-4">
-                            <p className="text-lg leading-8 text-foreground/60">
+                            <p className="text-lg leading-8 text-foreground/75">
                                 This Privacy Policy explains how HAEMA collects,
                                 uses, protects, and handles personal information
                                 when you use our blood donation and blood

@@ -5,6 +5,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -15,13 +16,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
     return (
-        <html lang="en" className={cn("font-sans", inter.variable)}>
-            <body className="min-h-dvh flex flex-col">
-                <Navbar />
-                <Sidebar />
-                {children}
-                <Footer />
-            </body>
-        </html>
+        <ClerkProvider>
+            <html lang="en" className={cn("font-sans", inter.variable)}>
+                <body className="min-h-dvh flex flex-col">
+                    <Navbar />
+                    <Sidebar />
+                    {children}
+                    <Footer />
+                </body>
+            </html>
+        </ClerkProvider>
     );
 }

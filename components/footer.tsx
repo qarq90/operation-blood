@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
     SiX,
@@ -9,8 +11,11 @@ import {
 } from "react-icons/si";
 import { FiArrowUpRight, FiMail } from "react-icons/fi";
 import { Input } from "./ui/input";
+import { usePathname } from "next/navigation";
 
 export const Footer = () => {
+    const pathname = usePathname();
+
     const quickLinks = [
         { label: "Donate Blood", href: "/donate" },
         { label: "Request Blood", href: "/request-blood" },
@@ -34,6 +39,8 @@ export const Footer = () => {
         { icon: SiDiscord, href: "/", label: "Discord" },
     ];
 
+    if (pathname.includes("/auth")) return;
+
     return (
         <footer className="w-full px-6 md:px-18 lg:px-28 xl:px-40 pt-20 pb-8">
             <section className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.5fr] lg:gap-16 py-8">
@@ -45,7 +52,7 @@ export const Footer = () => {
                         HAEMA
                     </Link>
 
-                    <p className="mt-6 max-w-sm text-sm leading-6 text-foreground/60">
+                    <p className="mt-6 max-w-sm text-sm leading-6 text-foreground/75">
                         Every drop tells a story. We connect donors, patients,
                         and hospitals so no one waits for the blood that could
                         save them.
@@ -87,7 +94,7 @@ export const Footer = () => {
                                 key={link.label}
                                 href={link.href}
                                 className="
-                                    text-sm text-foreground/60
+                                    text-sm text-foreground/75
                                     transition-colors duration-200
                                     hover:text-foreground
                                 "
@@ -107,7 +114,7 @@ export const Footer = () => {
                                 key={link.label}
                                 href={link.href}
                                 className="
-                                    text-sm text-foreground/60
+                                    text-sm text-foreground/75
                                     transition-colors duration-200
                                     hover:text-foreground
                                 "
@@ -121,7 +128,7 @@ export const Footer = () => {
                 <div className="flex flex-col gap-4">
                     <p className="text-base font-bold">Stay Updated</p>
 
-                    <p className="mt-6 max-w-sm text-sm leading-6 text-foreground/60">
+                    <p className="mt-6 max-w-sm text-sm leading-6 text-foreground/75">
                         Real stories, upcoming camps, and the moments your
                         donation made possible. Straight to your inbox.
                     </p>

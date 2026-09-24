@@ -65,13 +65,13 @@ export const Hero = () => {
 
             <div className="h-full w-1/3 shrink-0 flex items-center justify-center">
                 <div className="relative h-full w-full rounded-lg">
-                    <Image
+                    {/* <Image
                         src={HeroImage}
                         alt=""
                         fill
                         className="object-contain rounded-lg"
                         priority
-                    />
+                    /> */}
                 </div>
             </div>
         </section>
