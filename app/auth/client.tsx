@@ -4,17 +4,9 @@ import { Button } from "@/components/ui/button";
 import { useSignIn } from "@clerk/nextjs";
 import { useState, useEffect } from "react";
 import { FiSun, FiMoon } from "react-icons/fi";
-
 import { SiApple, SiFacebook, SiGithub, SiGoogle } from "react-icons/si";
-
 import { FaLinkedin } from "react-icons/fa";
-
-type OAuthStrategy =
-    | "oauth_google"
-    | "oauth_github"
-    | "oauth_apple"
-    | "oauth_facebook"
-    | "oauth_linkedin_oidc";
+import { OAuthStrategy } from "@/types/auth";
 
 const HEIGHTS = [300, 350, 400, 420, 480, 500, 550, 600, 620, 700];
 const IMAGES = Array.from({ length: 10 }, (_, i) => {
@@ -44,7 +36,7 @@ export default function Client() {
 
         root.style.setProperty("--background", dark ? "#171717" : "#ffffff");
         root.style.setProperty("--foreground", dark ? "#ffffff" : "#171717");
-        root.style.setProperty("--hover", dark ? "#323232" : "#cbcbcb");
+        root.style.setProperty("--hover", dark ? "#323232" : "#cccccc");
 
         root.classList.toggle("dark", dark);
     };

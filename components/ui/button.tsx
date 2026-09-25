@@ -25,10 +25,10 @@ export const Button = ({
     ...props
 }: ButtonProps) => {
     const base =
-        "inline-flex items-center justify-center gap-2 font-medium rounded-md transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-theme/50 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
+        "inline-flex items-center justify-center gap-2 font-medium rounded-md transition-colors duration-200 focus:outline-none focus-visible:ring-2 hover:scale-95 focus-visible:ring-theme/50 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
 
     const variants = {
-        primary: "bg-hover text-foreground hover:bg-theme hover:text-white active:bg-theme/90",
+        primary: "text-white bg-theme hover:bg-theme hover:text-white active:bg-theme/50",
         secondary:
             "bg-transparent text-theme border border-theme/30 hover:bg-theme/5 active:bg-theme/10",
         ghost: "bg-transparent text-neutral-700 hover:bg-neutral-100 active:bg-neutral-200",

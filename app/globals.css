@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-    --hover: #cbcbcb;
+    --hover: #cccccc;
     --theme: #be151b;
 
     --font:

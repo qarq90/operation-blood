@@ -6,3 +6,7 @@
 | 31/07/2026 | Topic Finalized | Ma'am chose Blood Banking System from 3. "Modi Newspaper topics" |
 | 01/08/2026 | Coding          | Project Structure and Home Page                                  |
 | 06/09/2026 | Coding          | Login and Signup Page                                            |
+| 17/09/2026 | Design          | Old scrapped, Project 2.0                                        |
+| 23/09/2026 | Design          | Design style, UI style                                           |
+| 25/09/2026 | Coding          | Auth via Clerk                                                   |
+| 25/09/2026 | Coding          | About Us, Privacy Policy, Terms of Service, Contact Us, FAQs     |

@@ -1,50 +1,6 @@
-"use client";
-
-type SectionProps = {
-    id: string;
-    number: string;
-    title: string;
-    children: React.ReactNode;
-};
-
-const sections = [
-    { id: "mission", number: "01", title: "Our Mission" },
-    { id: "story", number: "02", title: "How It Started" },
-    { id: "what-we-do", number: "03", title: "What We Do" },
-    { id: "how-it-works", number: "04", title: "How It Works" },
-    { id: "community", number: "05", title: "The Community" },
-    { id: "technology", number: "06", title: "Technology & Safety" },
-    { id: "team", number: "07", title: "Who We Are" },
-    { id: "partners", number: "08", title: "Hospitals & Blood Banks" },
-    { id: "values", number: "09", title: "Our Values" },
-    { id: "roadmap", number: "10", title: "Looking Ahead" },
-    { id: "contact", number: "11", title: "Get In Touch" },
-];
-
-function Section({ id, number, title, children }: SectionProps) {
-    return (
-        <section
-            id={id}
-            className="scroll-mt-28 border-b border-foreground/10 py-12 first:pt-0 last:border-b-0"
-        >
-            <div className="flex gap-5">
-                <span className="hidden shrink-0 pt-1 text-2xl font-bold text-red-500 sm:block">
-                    {number}
-                </span>
-
-                <div className="min-w-0 flex-1 flex flex-col gap-4">
-                    <h2 className="text-2xl font-bold tracking-tight text-foreground/75 sm:text-3xl">
-                        {title}
-                    </h2>
-
-                    <div className="mt-6 space-y-5 leading-7 text-foreground/75">
-                        {children}
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-}
+"use client";;
+import { Section } from "@/components/common/section";
+import { sections } from "@/lib/about-us";
 
 export default function Client() {
     return (

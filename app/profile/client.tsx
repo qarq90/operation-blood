@@ -81,9 +81,7 @@ export default function Client() {
                     <Detail label="Joined" value={joined} />
                     <Detail
                         label="2FA"
-                        value={
-                            user.twoFactorEnabled ? "Enabled" : "Disabled"
-                        }
+                        value={user.twoFactorEnabled ? "Enabled" : "Disabled"}
                     />
                 </div>
 
