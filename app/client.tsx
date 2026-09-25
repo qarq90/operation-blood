@@ -8,8 +8,8 @@ export default function Client() {
     const [isExiting, setIsExiting] = useState(false);
 
     useEffect(() => {
-        const t1 = setTimeout(() => setIsExiting(true), 3500);
-        const t2 = setTimeout(() => setShowGreeting(false), 3900);
+        const t1 = setTimeout(() => setIsExiting(true), 5000);
+        const t2 = setTimeout(() => setShowGreeting(false), 5000);
 
         return () => {
             clearTimeout(t1);
@@ -29,7 +29,7 @@ export default function Client() {
                         ${isExiting ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"}
                     `}
                 >
-                    <LandingGreeting durationScale={0.25} />
+                    <LandingGreeting durationScale={0.5} />
                 </div>
             )}
             <Hero />

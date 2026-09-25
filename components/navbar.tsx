@@ -74,7 +74,7 @@ export const Navbar = () => {
                         <img
                             src={user.imageUrl}
                             alt={user.fullName ?? "Profile"}
-                            className="w-8 h-8 rounded-full object-cover ring-2 ring-neutral-200 dark:ring-neutral-800 transition-transform duration-300 group-hover:scale-105"
+                            className="w-8 h-8 rounded-full object-cover transition-transform duration-300 group-hover:scale-105"
                         />
                     ) : (
                         <span className="inline-block transition-transform duration-300 group-hover:scale-110 hover:rotate-360">

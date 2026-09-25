@@ -1,28 +1,9 @@
 "use client";
-
-import {
-    FiHome,
-    FiUsers,
-    FiDroplet,
-    FiCalendar,
-    FiFileText,
-    FiSun,
-    FiMoon,
-    FiPlus,
-} from "react-icons/fi";
+import { FiSun, FiMoon } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import path from "path";
-
-const items = [
-    { label: "Home", Icon: FiHome, path: "/" },
-    { label: "Donors", Icon: FiUsers, path: "/donors" },
-    { label: "Checkup", Icon: FiPlus, path: "/checkup" },
-    { label: "Inventory", Icon: FiDroplet, path: "/inventory" },
-    { label: "Camps", Icon: FiCalendar, path: "/camps" },
-    { label: "News", Icon: FiFileText, path: "/news" },
-];
+import { items } from "@/lib/sidebar";
 
 export const Sidebar = () => {
     const pathname = usePathname();
@@ -67,10 +48,10 @@ export const Sidebar = () => {
         document.startViewTransition(commit);
     };
 
-    if (pathname.includes("/auth")) return
+    if (pathname.includes("/auth")) return;
 
     return (
-        <nav className="w-32 h-dvh text-white flex flex-col items-center justify-center fixed top-0 left-0 z-50">
+        <nav className="mt-10 w-32 h-dvh text-white flex flex-col items-center justify-center fixed top-0 left-0 z-50">
             <ul className="flex flex-col items-center gap-8">
                 {items.map(({ label, Icon, path }) => {
                     const isActive =

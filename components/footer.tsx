@@ -1,44 +1,12 @@
 "use client";
-
 import Link from "next/link";
-import {
-    SiX,
-    SiGithub,
-    SiYoutube,
-    SiInstagram,
-    SiDiscord,
-    SiFacebook,
-} from "react-icons/si";
 import { FiArrowUpRight, FiMail } from "react-icons/fi";
 import { Input } from "./ui/input";
 import { usePathname } from "next/navigation";
+import { socials, quickLinks, supportLinks } from "@/lib/footer";
 
 export const Footer = () => {
     const pathname = usePathname();
-
-    const quickLinks = [
-        { label: "Donate Blood", href: "/donate" },
-        { label: "Request Blood", href: "/request-blood" },
-        { label: "Find a Camp", href: "/camps" },
-        { label: "Schedule Checkup", href: "/checkup" },
-    ];
-
-    const supportLinks = [
-        { label: "Contact Us", href: "/contact-us" },
-        { label: "FAQs", href: "/faqs" },
-        { label: "Privacy Policy", href: "/privacy-policy" },
-        { label: "Terms & Conditions", href: "/terms-of-service" },
-    ];
-
-    const socials = [
-        { icon: SiGithub, href: "/", label: "GitHub" },
-        { icon: SiX, href: "/", label: "X" },
-        { icon: SiYoutube, href: "/", label: "YouTube" },
-        { icon: SiInstagram, href: "/", label: "Instagram" },
-        { icon: SiFacebook, href: "/", label: "Facebook" },
-        { icon: SiDiscord, href: "/", label: "Discord" },
-    ];
-
     if (pathname.includes("/auth")) return;
 
     return (
