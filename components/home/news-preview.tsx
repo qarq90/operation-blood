@@ -16,7 +16,7 @@ export const NewsPreview = () => {
     }, []);
 
     return (
-        <section className="w-full flex flex-col gap-y-12 items-center px-16 py-20">
+        <section className="w-full flex flex-col gap-y-12 items-center py-20">
             <div className="flex flex-col items-center gap-y-3 text-center">
                 <p className="text-8xl leading-tight">
                     From our{" "}

@@ -11,7 +11,7 @@ export const BloodTypes = () => {
     ];
 
     return (
-        <section className="w-full min-h-dvh/2 flex flex-col gap-y-16 items-center justify-center px-16 py-20">
+        <section className="w-full min-h-dvh/2 flex flex-col gap-y-16 items-center justify-center py-20">
             <p className="text-8xl text-center">
                 Live{" "}
                 <span className="text-theme font-bold uppercase">Blood</span>{" "}

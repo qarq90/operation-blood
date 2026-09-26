@@ -11,7 +11,7 @@ export const CurrentlyLive = () => {
 
     return (
         <section className="w-full h-[88dvh] flex flex-row-reverse gap-32 items-center">
-            <div className="h-full w-3/5 shrink-0 flex flex-col justify-center p-16 gap-16 text-right">
+            <div className="h-full w-3/5 shrink-0 flex flex-col justify-center gap-16 text-right">
                 <p className="text-8xl leading-32">
                     A snapshot of our{" "}
                     <span className="uppercase text-theme font-bold">

@@ -1,12 +1,14 @@
 "use client";
-import { FiSun, FiMoon } from "react-icons/fi";
+import { FiSun, FiMoon, FiUser } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { items } from "@/lib/sidebar";
+import { useUser } from "@clerk/nextjs";
 
 export const Sidebar = () => {
     const pathname = usePathname();
+    const { isLoaded, isSignedIn, user } = useUser();
 
     const [theme, setTheme] = useState<"light" | "dark">("light");
 
@@ -48,7 +50,7 @@ export const Sidebar = () => {
         document.startViewTransition(commit);
     };
 
-    if (pathname.includes("/auth")) return;
+    if (pathname.includes("/sign-in")) return;
 
     return (
         <nav className="mt-10 w-32 h-dvh text-white flex flex-col items-center justify-center fixed top-0 left-0 z-50">
@@ -85,6 +87,24 @@ export const Sidebar = () => {
                         </Link>
                     );
                 })}
+
+                <Link
+                    href="/profile"
+                    aria-label="Account"
+                    className="relative group grid place-items-center w-10 h-10 rounded-full overflow-hidden cursor-pointer transition-colors duration-200 hover:text-theme focus-visible:text-theme focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme/50"
+                >
+                    {isLoaded && isSignedIn && user ? (
+                        <img
+                            src={user.imageUrl}
+                            alt={user.fullName ?? "Profile"}
+                            className="w-8 h-8 rounded-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                    ) : (
+                        <span className="inline-block transition-transform duration-300 group-hover:scale-110 hover:rotate-360">
+                            <FiUser size={24} />
+                        </span>
+                    )}
+                </Link>
 
                 <li
                     className="w-full h-0.5 rounded-full bg-foreground/10 my-2"

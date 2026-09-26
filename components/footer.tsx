@@ -7,7 +7,7 @@ import { socials, quickLinks, supportLinks } from "@/lib/footer";
 
 export const Footer = () => {
     const pathname = usePathname();
-    if (pathname.includes("/auth")) return;
+    if (pathname.includes("/sign-in")) return;
 
     return (
         <footer className="w-full px-6 md:px-18 lg:px-28 xl:px-40 pt-20 pb-8">

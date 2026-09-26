@@ -7,7 +7,7 @@ export const Hero = () => {
     const [changeHeroText, setChangeHeroText] = useState(false);
     return (
         <section className="w-full h-dvh flex flex-row gap-32 items-center">
-            <div className="h-full w-3/5 shrink-0 flex flex-col justify-around p-16">
+            <div className="h-full w-3/5 shrink-0 flex flex-col justify-around">
                 <p></p>
                 <p></p>
                 <p></p>
@@ -63,7 +63,7 @@ export const Hero = () => {
                 <p></p>
             </div>
 
-            <div className="h-full w-2/5 shrink-0 flex items-center justify-center -mt-32">
+            <div className="h-full w-2/5 shrink-0 flex items-center scale-x-[-1] justify-center -mt-16">
                 <div className="relative h-full w-full rounded-lg">
                     <Image
                         src={android_hand}

@@ -1,24 +1,24 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useSignIn } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
+import { useSignIn } from "@clerk/nextjs/legacy";
+import pool from "@/lib/neon";
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { SiApple, SiFacebook, SiGithub, SiGoogle } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
 import { OAuthStrategy } from "@/types/auth";
-
-const HEIGHTS = [300, 350, 400, 420, 480, 500, 550, 600, 620, 700];
-const IMAGES = Array.from({ length: 10 }, (_, i) => {
-    const h = HEIGHTS[i % HEIGHTS.length];
-    const id = ((i * 137) % 1000) + 1;
-    return `https://picsum.photos/id/${id}/400/${h}`;
-});
+import { IMAGES } from "@/constants/sign-in";
+import { applyTheme } from "@/functions/theme";
 
 export default function Client() {
     const [theme, setTheme] = useState<"light" | "dark">("light");
-    const { signIn, fetchStatus } = useSignIn();
+    const { signIn, isLoaded: signInLoaded } = useSignIn();
+    const { isSignedIn, user, isLoaded: userLoaded } = useUser();
     const [loading, setLoading] = useState<OAuthStrategy | null>(null);
+    const router = useRouter();
 
     useEffect(() => {
         const saved = localStorage.getItem("theme") as "light" | "dark" | null;
@@ -29,17 +29,6 @@ export default function Client() {
         setTheme(initial);
         applyTheme(initial);
     }, []);
-
-    const applyTheme = (mode: "light" | "dark") => {
-        const dark = mode === "dark";
-        const root = document.documentElement;
-
-        root.style.setProperty("--background", dark ? "#171717" : "#ffffff");
-        root.style.setProperty("--foreground", dark ? "#ffffff" : "#171717");
-        root.style.setProperty("--hover", dark ? "#323232" : "#cccccc");
-
-        root.classList.toggle("dark", dark);
-    };
 
     const toggleTheme = () => {
         const next = theme === "dark" ? "light" : "dark";
@@ -58,23 +47,71 @@ export default function Client() {
         document.startViewTransition(commit);
     };
 
+    useEffect(() => {
+        if (userLoaded && isSignedIn && user) {
+            const syncUserToDB = async () => {
+                const client = await pool.connect();
+                try {
+                    await client.query(
+                        `
+                        INSERT INTO "users" (
+                            "user-id",
+                            "user-name",
+                            "user-email",
+                            "first-name",
+                            "last-name",
+                            "user-avatar",
+                            "phone-number"
+                        )
+                        VALUES ($1, $2, $3, $4, $5, $6, $7)
+                        ON CONFLICT ("user-id") DO NOTHING
+                    `,
+                        [
+                            user.id,
+                            user.username ||
+                                user.primaryEmailAddress?.emailAddress?.split(
+                                    "@",
+                                )[0],
+                            user.primaryEmailAddress?.emailAddress || null,
+                            user.firstName ||
+                                user.externalAccounts?.[0]?.firstName ||
+                                "",
+                            user.lastName ||
+                                user.externalAccounts?.[0]?.lastName ||
+                                "",
+                            user.imageUrl || null,
+                            user.primaryPhoneNumber?.phoneNumber || null,
+                        ],
+                    );
+                } catch (error) {
+                    console.error("Failed to sync user:", error);
+                } finally {
+                    client.release();
+                    router.push("/");
+                }
+            };
+
+            syncUserToDB();
+        }
+    }, [userLoaded, isSignedIn, user, router]);
+
     const signInWith = async (strategy: OAuthStrategy) => {
-        if (!signIn) return;
+        if (!signInLoaded || !signIn) return;
         setLoading(strategy);
 
-        const { error } = await signIn.sso({
-            strategy,
-            redirectUrl: "/sso-callback",
-            redirectCallbackUrl: "/",
-        });
-
-        if (error) {
+        try {
+            await signIn.authenticateWithRedirect({
+                strategy,
+                redirectUrl: "/sso-callback",
+                redirectUrlComplete: "/",
+            });
+        } catch (error) {
             console.error("OAuth error:", error);
             setLoading(null);
         }
     };
 
-    const isBusy = !signIn || fetchStatus === "fetching" || loading !== null;
+    const isBusy = !signInLoaded || loading !== null;
 
     return (
         <main className="min-h-screen overflow-hidden flex flex-row">
@@ -96,6 +133,7 @@ export default function Client() {
                     H<span className="lowercase">α</span>EM
                     <span className="lowercase">α</span>
                 </p>
+
                 <div className="w-full flex flex-col gap-4">
                     <Button
                         className="w-full"

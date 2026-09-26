@@ -35,7 +35,7 @@ export default function Client() {
 
     return (
         <main className="min-h-screen">
-            <section className="pt-24 sm:px-10 lg:pt-20 max-w-7xl">
+            <section className="pt-24 sm:px-10 lg:pt-20">
                 <div className="flex items-center justify-between">
                     <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-7xl">
                         Profile
@@ -71,7 +71,7 @@ export default function Client() {
                     </div>
                 </div>
 
-                <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="mt-12 grid grid-cols-4 sm:grid-cols-4 gap-6">
                     <Detail label="First name" value={user.firstName} />
                     <Detail label="Last name" value={user.lastName} />
                     <Detail label="Username" value={user.username} />
@@ -88,7 +88,7 @@ export default function Client() {
                 {user.externalAccounts.length > 0 && (
                     <div className="mt-12">
                         <h3 className="text-lg font-semibold tracking-tight mb-4">
-                            Connected accounts
+                            Connected account
                         </h3>
                         <div className="flex flex-col gap-2">
                             {user.externalAccounts.map((acc) => (
