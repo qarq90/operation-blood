@@ -2,6 +2,9 @@
 import { useEffect, useState } from "react";
 import { Hero } from "@/components/home/hero";
 import { LandingGreeting } from "@/components/home/landing-greeting";
+import { BloodTypes } from "@/components/home/blood-types";
+import { CurrentlyLive } from "@/components/home/currently-live";
+import { NewsPreview } from "@/components/home/news-preview";
 
 export default function Client() {
     const [showGreeting, setShowGreeting] = useState(true);
@@ -33,6 +36,9 @@ export default function Client() {
                 </div>
             )}
             <Hero />
+            <BloodTypes />
+            <CurrentlyLive />
+            <NewsPreview />
         </>
     );
 }

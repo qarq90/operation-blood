@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
-import HeroImage from "../../public/imgs/android_hand.png";
+import android_hand from "../../public/imgs/android_hand.png";
 
 export const Hero = () => {
     const [changeHeroText, setChangeHeroText] = useState(false);
     return (
-        <section className="w-full h-dvh flex flex-row gap-4 items-center">
+        <section className="w-full h-dvh flex flex-row gap-32 items-center">
             <div className="h-full w-3/5 shrink-0 flex flex-col justify-around p-16">
                 <p></p>
                 <p></p>
@@ -66,7 +66,7 @@ export const Hero = () => {
             <div className="h-full w-2/5 shrink-0 flex items-center justify-center -mt-32">
                 <div className="relative h-full w-full rounded-lg">
                     <Image
-                        src={HeroImage}
+                        src={android_hand}
                         alt=""
                         fill
                         className="object-contain rounded-lg"

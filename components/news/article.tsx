@@ -24,7 +24,7 @@ export function ArticleCard({
     return (
         <Link
             href={`/news/${article.slug}/${article.id}`}
-            className="block rounded-lg border border-theme/25 p-5 transition hover:border-red-500/40 hover:bg-theme/15"
+            className="block rounded-lg border border-foreground/5 p-5 transition hover:border-red-500/40 hover:bg-theme/15"
         >
             <h3 className="text-xl font-bold text-foreground/80">
                 {article.title}
@@ -36,8 +36,8 @@ export function ArticleCard({
 
             <p className="mt-2 text-sm leading-6 text-foreground/60">
                 {article.content?.[0]
-                    ? article.content[0].length > 100
-                        ? `${article.content[0].slice(0, 100)}…`
+                    ? article.content[0].length > 150
+                        ? `${article.content[0].slice(0, 150)}…`
                         : article.content[0]
                     : null}
             </p>

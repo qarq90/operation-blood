@@ -1,73 +1,10 @@
-"use client";;
+"use client";
 import Link from "next/link";
-import { articles as allArticles, sections } from "@/lib/news";
+import { sections } from "@/lib/news";
 import { Section } from "@/components/common/section";
-
-function ArticleCard({ article }: { article: (typeof allArticles)[number] }) {
-    return (
-        <Link
-            href={`/news/${article.slug}/${article.id}`}
-            className="border rounded-lg border-theme/25 p-5 transition hover:bg-theme/15 hover:border-red-500/40"
-        >
-            <div className="flex items-center gap-3"></div>
-
-            <h3 className="mt-3 text-base font-bold text-foreground/80">
-                {article.title}
-            </h3>
-
-            <p className="mt-2 text-sm leading-6 text-foreground/60">
-                {article.excerpt}
-            </p>
-
-            <div className="mt-4 flex flex-row-reverse items-center justify-between">
-                <span className="text-xs text-foreground/50">
-                    {article.date}
-                </span>{" "}
-                <span className="text-xs text-foreground/50">
-                    {article.readTime}
-                </span>
-            </div>
-        </Link>
-    );
-}
-
-function CategoryPreview({
-    slug,
-    fallbackLabel,
-}: {
-    slug: string;
-    fallbackLabel: string;
-}) {
-    const pool = allArticles.filter((a) => a.slug === slug);
-
-    if (pool.length === 0) {
-        return (
-            <p className="text-sm text-foreground/50">
-                No articles in this category yet.
-            </p>
-        );
-    }
-
-    const shuffled = [...pool].sort(() => Math.random() - 0.5);
-    const picks = shuffled.slice(0, 2);
-
-    return (
-        <>
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                {picks.map((article) => (
-                    <ArticleCard key={article.id} article={article} />
-                ))}
-            </div>
-
-            <Link
-                href={`/news/${slug}`}
-                className="text-sm font-semibold text-red-500 hover:underline"
-            >
-                Browse all {fallbackLabel.toLowerCase()} →
-            </Link>
-        </>
-    );
-}
+import { CategoryPreview } from "@/components/news/catergory-preview";
+import { FeaturedStory } from "@/components/news/featured";
+import { LatestArticles } from "@/components/news/latest";
 
 export default function Client() {
     return (
@@ -122,7 +59,7 @@ export default function Client() {
                             number="01"
                             title="Featured Story"
                         >
-                            <></>
+                            <FeaturedStory />
                         </Section>
 
                         <Section
@@ -130,7 +67,7 @@ export default function Client() {
                             number="02"
                             title="Latest Articles"
                         >
-                            <></>
+                            <LatestArticles />
                         </Section>
 
                         <Section id="historical" number="03" title="Historical">

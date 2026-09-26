@@ -17,7 +17,9 @@ export const Footer = () => {
                         href="/"
                         className="w-fit text-2xl font-bold uppercase tracking-tight"
                     >
-                        HAEMA
+                        {" "}
+                        H<span className="lowercase text-4xl">α</span>EM
+                        <span className="lowercase text-4xl">α</span>
                     </Link>
 
                     <p className="mt-6 max-w-sm text-sm leading-6 text-foreground/75">
@@ -26,7 +28,7 @@ export const Footer = () => {
                         save them.
                     </p>
 
-                    <div className="mt-8 flex items-center gap-4">
+                    <div className="flex items-center gap-4">
                         {socials.map(({ icon: Icon, href, label }) => (
                             <Link
                                 key={label}
@@ -35,7 +37,7 @@ export const Footer = () => {
                                 className="
                                     hover:rotate-360
                                     group flex h-12 w-12 items-center justify-center
-                                    rounded-full border border-theme/25
+                                    rounded-full
                                     text-foreground
                                     transition-all duration-300
                                     hover:border-theme hover:text-theme
@@ -138,7 +140,7 @@ export const Footer = () => {
             </section>
 
             <div
-                className="my-12 h-px w-full bg-foreground/10"
+                className="my-16 h-px w-full bg-foreground/10"
                 aria-hidden="true"
             />
 

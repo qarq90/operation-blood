@@ -10,3 +10,5 @@
 | 23/09/2026 | Design          | Design style, UI style                                           |
 | 25/09/2026 | Coding          | Auth via Clerk                                                   |
 | 25/09/2026 | Coding          | About Us, Privacy Policy, Terms of Service, Contact Us, FAQs     |
+| 25/09/2026 | Coding          | Restructuring and Refactoring                                    |
+| 26/09/2026 | Coding          | Home 1.0, QOL                                                    |
