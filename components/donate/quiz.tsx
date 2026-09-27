@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { eligibilityQuestions } from "@/lib/eligibility";
-import { EligibilityAnswer } from "@/types/eligibility";
+import { eligibilityQuestions } from "@/lib/donate";
+import { EligibilityAnswer } from "@/types/donate";
 import AnswerHistory from "./answer-history";
 import ProgressBar from "./progress-bar";
 

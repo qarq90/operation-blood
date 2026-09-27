@@ -10,6 +10,8 @@ type ButtonProps = {
     type?: "button" | "submit" | "reset";
     fullWidth?: boolean;
     as?: React.ElementType;
+    title?: string;
+    "aria-label"?: string;
 };
 
 export const Button = ({
@@ -22,17 +24,22 @@ export const Button = ({
     type = "button",
     fullWidth = false,
     as,
+    title,
+    "aria-label": ariaLabel,
     ...props
 }: ButtonProps) => {
     const base =
         "inline-flex items-center justify-center gap-2 font-medium rounded-md transition-colors duration-200 focus:outline-none focus-visible:ring-2 hover:scale-95 focus-visible:ring-theme/50 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
 
     const variants = {
-        primary: "text-white bg-theme hover:bg-theme hover:text-white active:bg-theme/50",
+        primary:
+            "text-white bg-theme hover:bg-theme hover:text-white active:bg-theme/50",
         secondary:
             "bg-transparent text-theme border border-theme/30 hover:bg-theme/5 active:bg-theme/10",
-        ghost: "bg-transparent text-neutral-700 hover:bg-neutral-100 active:bg-neutral-200",
-        danger: "bg-red-600 text-white hover:bg-red-700 active:bg-red-800",
+        ghost:
+            "bg-transparent text-neutral-700 hover:bg-neutral-100 active:bg-neutral-200",
+        danger:
+            "bg-red-600 text-white hover:bg-red-700 active:bg-red-800",
     };
 
     const sizes = {
@@ -49,12 +56,16 @@ export const Button = ({
     };
 
     const Component = as || defaultTag[variant] || "button";
+    const isButton = Component === "button";
 
     return (
         <Component
-            type={Component === "button" ? type : undefined}
-            disabled={Component === "button" ? disabled : undefined}
+            type={isButton ? type : undefined}
+            disabled={isButton ? disabled : undefined}
+            aria-disabled={disabled || undefined}
             onClick={onClick}
+            title={title}
+            aria-label={ariaLabel}
             className={`
                 ${base}
                 ${variants[variant]}

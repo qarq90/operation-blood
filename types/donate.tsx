@@ -31,3 +31,17 @@ export interface EligibilityResult {
     retryAfter?: Date;
     reasons: string[];
 }
+
+export type Camp = {
+    id: string;
+    name: string;
+    hospital: string;
+    address: string;
+    city: string;
+    date: string;
+    startTime: string;
+    endTime: string;
+    slotsTotal: number;
+    slotsLeft: number;
+    needs: string[];
+};

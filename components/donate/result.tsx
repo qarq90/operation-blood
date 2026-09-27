@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { EligibilityResult } from "@/types/eligibility";
+import { EligibilityResult } from "@/types/donate";
 import andriod_give from "../../public/imgs/andriod_give.png";
 import andriod_kneel from "../../public/imgs/andriod_kneel.png";
 

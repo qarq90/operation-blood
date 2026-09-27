@@ -1,8 +1,6 @@
-"use client";
-
+"use client";;
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { FiMinus, FiPlus } from "react-icons/fi";
 import { BloodProfile } from "@/types/profile";
 import {
     EMPTY,
@@ -14,6 +12,10 @@ import {
 } from "@/constants/profile";
 import { Stepper } from "../ui/stepper";
 import { CheckboxGroup } from "../ui/checkbox-group";
+import { Checkbox } from "../ui/checkbox";
+import { Field } from "./field";
+import { Input } from "./input";
+import { DropdownSelect } from "./dropdown-select";
 
 export function BloodProfileForm({
     initial,
@@ -25,6 +27,7 @@ export function BloodProfileForm({
     const [editing, setEditing] = useState(!initial);
     const [data, setData] = useState<BloodProfile>({ ...EMPTY, ...initial });
     const [saving, setSaving] = useState(false);
+    const [consent, setConsent] = useState(false);
 
     const update = (key: keyof BloodProfile, value: string) =>
         setData((d) => ({ ...d, [key]: value }));
@@ -42,6 +45,7 @@ export function BloodProfileForm({
     const handleCancel = () => {
         setData({ ...EMPTY, ...initial });
         setEditing(false);
+        setConsent(false);
     };
 
     return (
@@ -65,7 +69,15 @@ export function BloodProfileForm({
                                 Cancel
                             </Button>
                         )}
-                        <Button onClick={handleSave} disabled={saving}>
+                        <Button
+                            onClick={handleSave}
+                            disabled={saving || !consent}
+                            title={
+                                !consent
+                                    ? "Please accept the terms to continue"
+                                    : undefined
+                            }
+                        >
                             {saving ? "Saving…" : "Save"}
                         </Button>
                     </div>
@@ -78,7 +90,7 @@ export function BloodProfileForm({
                     editing={editing}
                     value={data.bloodType}
                 >
-                    <Select
+                    <DropdownSelect
                         value={data.bloodType}
                         onChange={(v) => update("bloodType", v)}
                         options={BLOOD_TYPES}
@@ -99,7 +111,7 @@ export function BloodProfileForm({
                 </Field>
 
                 <Field label="Gender" editing={editing} value={data.gender}>
-                    <Select
+                    <DropdownSelect
                         value={data.gender}
                         onChange={(v) => update("gender", v)}
                         options={GENDERS}
@@ -237,82 +249,14 @@ export function BloodProfileForm({
                     />
                 </Field>
             </div>
+
+            <div className="mt-6 rounded-lg border border-neutral-200 dark:border-neutral-800">
+                <Checkbox
+                    checked={consent}
+                    onChange={setConsent}
+                    label="I confirm the information above is accurate and I accept the Terms of Service and Privacy Policy."
+                />
+            </div>
         </section>
-    );
-}
-
-function Field({
-    label,
-    editing,
-    value,
-    children,
-}: {
-    label: string;
-    editing: boolean;
-    value?: string | null;
-    children: React.ReactNode;
-}) {
-    return (
-        <div className="flex flex-col gap-2 rounded-lg border border-neutral-200 dark:border-neutral-800 px-4 py-3">
-            <span className="text-xs uppercase tracking-wide text-neutral-500">
-                {label}
-            </span>
-            {editing ? (
-                children
-            ) : (
-                <span className="whitespace-pre-wrap text-sm font-medium">
-                    {value || "—"}
-                </span>
-            )}
-        </div>
-    );
-}
-
-function Input({
-    value,
-    onChange,
-    type = "text",
-    placeholder,
-}: {
-    value: string;
-    onChange: (v: string) => void;
-    type?: string;
-    placeholder?: string;
-}) {
-    return (
-        <input
-            type={type}
-            value={value}
-            placeholder={placeholder}
-            onChange={(e) => onChange(e.target.value)}
-            className="w-full bg-transparent text-sm font-medium outline-none placeholder:text-neutral-400"
-        />
-    );
-}
-
-function Select({
-    value,
-    onChange,
-    options,
-    placeholder,
-}: {
-    value: string;
-    onChange: (v: string) => void;
-    options: string[];
-    placeholder?: string;
-}) {
-    return (
-        <select
-            value={value}
-            onChange={(e) => onChange(e.target.value)}
-            className="w-full bg-transparent text-sm font-medium outline-none"
-        >
-            <option value="">{placeholder ?? "Select…"}</option>
-            {options.map((o) => (
-                <option key={o} value={o}>
-                    {o}
-                </option>
-            ))}
-        </select>
     );
 }
