@@ -131,7 +131,7 @@ function Detail({
                     mono ? "font-mono text-xs" : ""
                 }`}
             >
-                {value || "—"}
+                {value || "that is"}
             </span>
         </div>
     );

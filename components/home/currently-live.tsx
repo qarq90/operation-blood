@@ -2,7 +2,6 @@ import Image from "next/image";
 import android_transfusion from "../../public/imgs/android_transfusion.png";
 
 export const CurrentlyLive = () => {
-
     const stats = [
         { label: "So far", value: "12,480", sub: "Total Donors" },
         { label: "So far", value: "8,932", sub: "Requests Fulfilled" },
@@ -39,7 +38,7 @@ export const CurrentlyLive = () => {
                 </div>
             </div>
 
-           <div className="h-full w-2/5 shrink-0 flex items-center justify-center -mt-32 -mr-32">
+            <div className="h-full w-2/5 shrink-0 flex items-center justify-center -mt-32 -mr-8">
                 <div className="relative h-full w-full rounded-lg">
                     <Image
                         src={android_transfusion}

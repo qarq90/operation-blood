@@ -54,7 +54,7 @@ export default function Client() {
                         <Section id="mission" number="01" title="Our Mission">
                             <p>
                                 Every day, patients across the country need
-                                blood — for surgeries, accidents, childbirth,
+                                blood that is for surgeries, accidents, childbirth,
                                 cancer treatment, and chronic conditions. Yet
                                 finding a matching donor or a stocked blood bank
                                 in time often depends on phone calls, WhatsApp
@@ -85,7 +85,7 @@ export default function Client() {
                             </p>
 
                             <p>
-                                The answer was not a lack of donors — it was a
+                                The answer was not a lack of donors that is it was a
                                 lack of coordination. Donors had no easy way to
                                 be discovered. Blood banks had no shared view of
                                 stock. Patients had no reliable way to reach
@@ -125,7 +125,7 @@ export default function Client() {
 
                             <p>
                                 We do not replace hospitals, blood banks, or
-                                medical professionals. We connect them — and the
+                                medical professionals. We connect them that is and the
                                 people who depend on them.
                             </p>
                         </Section>
@@ -145,7 +145,7 @@ export default function Client() {
 
                             <p>
                                 For patients and families, the process starts
-                                with a blood request — filtered by blood group,
+                                with a blood request that is filtered by blood group,
                                 city, and quantity. Contact details stay hidden
                                 until a donor or blood bank accepts the request,
                                 protecting everyone&apos;s privacy.
@@ -220,7 +220,7 @@ export default function Client() {
                                 <strong>
                                     No online system can be perfectly secure,
                                     but we design every feature assuming privacy
-                                    is a right — not a setting.
+                                    is a right that is not a setting.
                                 </strong>
                             </div>
                         </Section>
@@ -235,7 +235,7 @@ export default function Client() {
                             <p>
                                 We work closely with hospitals, blood banks, and
                                 camp organizers to make sure the platform
-                                reflects real-world workflows — not just theory.
+                                reflects real-world workflows that is not just theory.
                             </p>
 
                             <p>
@@ -260,7 +260,7 @@ export default function Client() {
                             <p>
                                 Partners get access to a dedicated dashboard for
                                 managing stock, requests, donor history, and
-                                camp participation — along with reports and
+                                camp participation that is along with reports and
                                 analytics.
                             </p>
 
@@ -280,7 +280,7 @@ export default function Client() {
                             <ul className="list-disc space-y-2 pl-6">
                                 <li>
                                     <strong>Life First:</strong> Every decision
-                                    we make is measured against one question —
+                                    we make is measured against one question that is
                                     does this help save a life faster?
                                 </li>
                                 <li>
@@ -324,7 +324,7 @@ export default function Client() {
                             </ul>
 
                             <p>
-                                We ship in small, careful steps — always with
+                                We ship in small, careful steps that is always with
                                 privacy, accuracy, and lives at the center.
                             </p>
                         </Section>
@@ -333,7 +333,7 @@ export default function Client() {
                             <p>
                                 Whether you are a donor, a patient, a hospital,
                                 a blood bank, an organizer, or someone who wants
-                                to contribute — we want to hear from you.
+                                to contribute that is we want to hear from you.
                             </p>
 
                             <ul className="list-disc space-y-2 pl-6">

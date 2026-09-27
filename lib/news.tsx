@@ -120,7 +120,7 @@ export const articles: Article[] = [
         slug: "health-tips",
         title: "Exercising Safely After Donating Blood",
         excerpt:
-            "You can return to workouts — but not immediately. Here is a safe timeline for different activity levels.",
+            "You can return to workouts that is but not immediately. Here is a safe timeline for different activity levels.",
         date: "01 Sep 2026",
         readTime: "4 min read",
         content: [
@@ -214,7 +214,7 @@ export const articles: Article[] = [
         id: 10,
         category: "Myths",
         slug: "myths",
-        title: "5 Common Myths About Blood Donation — Debunked",
+        title: "5 Common Myths About Blood Donation that is Debunked",
         excerpt:
             "From 'it makes you weak' to 'it's painful', we break down the most common misconceptions with facts.",
         date: "15 Sep 2026",
@@ -254,7 +254,7 @@ export const articles: Article[] = [
         slug: "myths",
         title: "Does Donating Blood Make You Gain Weight?",
         excerpt:
-            "No — but here's why the myth persists and what actually happens to your body.",
+            "No that is but here's why the myth persists and what actually happens to your body.",
         date: "09 Sep 2026",
         readTime: "3 min read",
         content: [
@@ -273,7 +273,7 @@ export const articles: Article[] = [
         slug: "myths",
         title: "Blood Donation and Tattoos: What You Need to Know",
         excerpt:
-            "Tattoos don't automatically disqualify you — but there are rules. Here's the full picture.",
+            "Tattoos don't automatically disqualify you that is but there are rules. Here's the full picture.",
         date: "06 Sep 2026",
         readTime: "4 min read",
         content: [
@@ -292,7 +292,7 @@ export const articles: Article[] = [
         slug: "myths",
         title: "Can Women Donate Blood During Menstruation?",
         excerpt:
-            "Yes, in most cases — but there are factors to consider. Here's what donors should know.",
+            "Yes, in most cases that is but there are factors to consider. Here's what donors should know.",
         date: "03 Sep 2026",
         readTime: "3 min read",
         content: [
@@ -330,7 +330,7 @@ export const articles: Article[] = [
         slug: "myths",
         title: "Do You Really Need to Fast Before Donating Blood?",
         excerpt:
-            "Fasting is not required — and it can actually make you feel worse. Here's why.",
+            "Fasting is not required that is and it can actually make you feel worse. Here's why.",
         date: "28 Aug 2026",
         readTime: "3 min read",
         content: [
@@ -349,7 +349,7 @@ export const articles: Article[] = [
         slug: "myths",
         title: "Blood Type and Personality: Separating Science from Fiction",
         excerpt:
-            "The blood-type personality theory is popular in some cultures — but it has no scientific basis.",
+            "The blood-type personality theory is popular in some cultures that is but it has no scientific basis.",
         date: "25 Aug 2026",
         readTime: "4 min read",
         content: [
@@ -368,7 +368,7 @@ export const articles: Article[] = [
         slug: "myths",
         title: "Can You Donate Blood If You Have High Blood Pressure?",
         excerpt:
-            "Often yes — if it's controlled. Here's what the screening process checks for.",
+            "Often yes that is if it's controlled. Here's what the screening process checks for.",
         date: "22 Aug 2026",
         readTime: "4 min read",
         content: [
@@ -464,7 +464,7 @@ export const articles: Article[] = [
         slug: "donor-stories",
         title: "Why This Auto Driver Donates Every 90 Days",
         excerpt:
-            "For Suresh, donating is a habit — and a promise he made to himself years ago.",
+            "For Suresh, donating is a habit that is and a promise he made to himself years ago.",
         date: "31 Aug 2026",
         readTime: "4 min read",
         content: [
@@ -636,7 +636,7 @@ export const articles: Article[] = [
         slug: "historical",
         title: "The Discovery of the Rh Factor (1937)",
         excerpt:
-            "Landsteiner and Wiener identified the Rhesus factor — solving a major cause of transfusion reactions.",
+            "Landsteiner and Wiener identified the Rhesus factor that is solving a major cause of transfusion reactions.",
         date: "21 Aug 2026",
         readTime: "5 min read",
         content: [
@@ -1078,7 +1078,7 @@ export const articles: Article[] = [
         slug: "tragic-events",
         title: "When Blood Runs Short: Lessons from Major Disasters",
         excerpt:
-            "From earthquakes to road accidents, we look at how shortages happen — and how to prevent them.",
+            "From earthquakes to road accidents, we look at how shortages happen that is and how to prevent them.",
         date: "16 Sep 2026",
         readTime: "7 min read",
         content: [
@@ -1421,7 +1421,7 @@ export const articles: Article[] = [
         id: 73,
         category: "Camp Updates",
         slug: "camp-updates",
-        title: "Mega Blood Donation Camp — Mumbai, 28 Sep",
+        title: "Mega Blood Donation Camp that is Mumbai, 28 Sep",
         excerpt:
             "A city-wide camp is being organized with 12 partner blood banks. Registration is open.",
         date: "08 Sep 2026",
@@ -1440,7 +1440,7 @@ export const articles: Article[] = [
         id: 74,
         category: "Camp Updates",
         slug: "camp-updates",
-        title: "Delhi NCR Camp Drive — October Schedule",
+        title: "Delhi NCR Camp Drive that is October Schedule",
         excerpt:
             "Five camps across Delhi, Gurgaon, and Noida are scheduled for October. Here are the dates.",
         date: "05 Sep 2026",
@@ -1459,7 +1459,7 @@ export const articles: Article[] = [
         id: 75,
         category: "Camp Updates",
         slug: "camp-updates",
-        title: "Bangalore Tech Park Camp — Register Now",
+        title: "Bangalore Tech Park Camp that is Register Now",
         excerpt:
             "A multi-day camp across three tech parks in Bangalore expects 1,500+ donors.",
         date: "02 Sep 2026",
@@ -1478,7 +1478,7 @@ export const articles: Article[] = [
         id: 76,
         category: "Camp Updates",
         slug: "camp-updates",
-        title: "Chennai Coastal Camp — Post-Monsoon Dates Announced",
+        title: "Chennai Coastal Camp that is Post-Monsoon Dates Announced",
         excerpt:
             "Rescheduled due to weather, the Chennai camp will now run in mid-October.",
         date: "30 Aug 2026",
@@ -1497,7 +1497,7 @@ export const articles: Article[] = [
         id: 77,
         category: "Camp Updates",
         slug: "camp-updates",
-        title: "Pune University Camp — Student-Led, Record Turnout",
+        title: "Pune University Camp that is Student-Led, Record Turnout",
         excerpt:
             "Over 800 students participated in a 2-day camp organized entirely by volunteers.",
         date: "27 Aug 2026",
@@ -1516,7 +1516,7 @@ export const articles: Article[] = [
         id: 78,
         category: "Camp Updates",
         slug: "camp-updates",
-        title: "Hyderabad Corporate Camp — 8 Companies Participating",
+        title: "Hyderabad Corporate Camp that is 8 Companies Participating",
         excerpt:
             "A joint corporate drive will bring together employees from 8 major IT firms.",
         date: "24 Aug 2026",
@@ -1535,7 +1535,7 @@ export const articles: Article[] = [
         id: 79,
         category: "Camp Updates",
         slug: "camp-updates",
-        title: "Kolkata Riverside Camp — New Venue Confirmed",
+        title: "Kolkata Riverside Camp that is New Venue Confirmed",
         excerpt:
             "The popular riverside camp is moving to a larger venue to accommodate more donors.",
         date: "21 Aug 2026",
@@ -1554,7 +1554,7 @@ export const articles: Article[] = [
         id: 80,
         category: "Camp Updates",
         slug: "camp-updates",
-        title: "Jaipur Heritage Camp — A Unique Donation Experience",
+        title: "Jaipur Heritage Camp that is A Unique Donation Experience",
         excerpt:
             "Donors will receive a guided tour of a heritage site after their donation.",
         date: "18 Aug 2026",
@@ -1709,7 +1709,7 @@ export const articles: Article[] = [
         slug: "announcements",
         title: "Platform Reaches 12,000 Registered Donors",
         excerpt:
-            "A milestone worth celebrating — and a reminder of how much more we can do together.",
+            "A milestone worth celebrating that is and a reminder of how much more we can do together.",
         date: "18 Aug 2026",
         readTime: "2 min read",
         content: [
@@ -1744,7 +1744,7 @@ export const articles: Article[] = [
         id: 90,
         category: "Announcements",
         slug: "announcements",
-        title: "Scheduled Maintenance — Platform Downtime Notice",
+        title: "Scheduled Maintenance that is Platform Downtime Notice",
         excerpt:
             "The platform will be unavailable for 2 hours on 30 Sep for scheduled upgrades.",
         date: "12 Aug 2026",

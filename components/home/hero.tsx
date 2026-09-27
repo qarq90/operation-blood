@@ -6,9 +6,8 @@ import android_hand from "../../public/imgs/android_hand.png";
 export const Hero = () => {
     const [changeHeroText, setChangeHeroText] = useState(false);
     return (
-        <section className="w-full h-dvh flex flex-row gap-32 items-center">
+        <section className="w-full h-dvh flex flex-row gap-32 items-center -mt-12">
             <div className="h-full w-3/5 shrink-0 flex flex-col justify-around">
-                <p></p>
                 <p></p>
                 <p></p>
                 <p
@@ -50,8 +49,6 @@ export const Hero = () => {
                         back.
                     </span>
                 </p>
-                <p></p>
-                <p></p>
 
                 <div className="flex flex-row gap-4">
                     <Button size="md">Register Now</Button>
@@ -63,7 +60,7 @@ export const Hero = () => {
                 <p></p>
             </div>
 
-            <div className="h-full w-2/5 shrink-0 flex items-center scale-x-[-1] justify-center -mt-16">
+            <div className="h-full w-2/5 shrink-0 flex items-center scale-x-[-1] justify-center -mt-16 -ml-16">
                 <div className="relative h-full w-full rounded-lg">
                     <Image
                         src={android_hand}
