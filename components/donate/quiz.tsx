@@ -53,7 +53,7 @@ export default function Quiz({
                         <button
                             key={String(opt.value)}
                             onClick={() => onAnswer(opt.value)}
-                            className="group flex items-center justify-center rounded-xl border border-foreground/10 px-5 py-4 text-left transition-all duration-300 hover:border-red-500/40 hover:bg-theme/15"
+                            className="group flex items-center justify-center rounded-xl border border-foreground/10 px-5 py-4 text-left transition-all duration-300 hover:border-theme/40 hover:bg-theme/15"
                         >
                             <span className="font-medium">{opt.label}</span>
                         </button>

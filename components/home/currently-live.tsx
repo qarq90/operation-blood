@@ -22,7 +22,7 @@ export const CurrentlyLive = () => {
                     {stats.map(({ label, value, sub }) => (
                         <div
                             key={sub}
-                            className="hover:bg-theme/15 group flex flex-col items-center justify-center gap-y-2 rounded-xl border border-foreground/5 p-6 transition-all duration-300 hover:border-red-500/40"
+                            className="hover:bg-theme/15 group flex flex-col items-center justify-center gap-y-2 rounded-xl border border-foreground/5 p-6 transition-all duration-300 hover:border-theme/40"
                         >
                             <p className="text-2xl font-semibold tracking-wide text-foreground/80 transition-colors">
                                 {label}
