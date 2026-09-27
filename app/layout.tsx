@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "@/components/ui/toast";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                     <Navbar />
                     <Sidebar />
                     {children}
+                    <Toaster />
                     <Footer />
                 </body>
             </html>

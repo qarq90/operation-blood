@@ -4,6 +4,7 @@ import { LuMapPin, LuCalendar, LuClock, LuDroplet } from "react-icons/lu";
 import { Button } from "../ui/button";
 import { Row } from "../ui/row";
 import { Camp } from "@/types/donate";
+import { slugify } from "@/functions/slugify";
 
 export function CampCard({ camp }: { camp: Camp }) {
     const low = camp.slotsLeft <= 10;
@@ -44,7 +45,7 @@ export function CampCard({ camp }: { camp: Camp }) {
                         : `${camp.slotsLeft} of ${camp.slotsTotal} left`}
                 </span>
 
-                <Link href={`/camps/${camp.id}`}>
+                <Link href={`/camps/${slugify(camp.name)}/book`}>
                     <Button disabled={full}>
                         {full ? "Full" : "Book a Slot"}
                     </Button>

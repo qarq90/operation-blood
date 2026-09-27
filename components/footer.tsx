@@ -1,17 +1,17 @@
 "use client";
 import Link from "next/link";
-import { FiArrowUpRight, FiMail } from "react-icons/fi";
-import { Input } from "./ui/input";
 import { usePathname } from "next/navigation";
 import { socials, quickLinks, supportLinks } from "@/lib/footer";
+import hands_cupped from "../public/imgs/hands_cupped.png";
+import Image from "next/image";
 
 export const Footer = () => {
     const pathname = usePathname();
     if (pathname.includes("/sign-in")) return;
 
     return (
-        <footer className="w-full px-6 md:px-18 lg:px-28 xl:px-40 pt-20 pb-8">
-            <section className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.5fr] lg:gap-16 py-8">
+        <footer className="w-full flex flex-col px-6 md:px-18 lg:px-28 xl:px-40 pt-20 pb-12">
+            <section className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.5fr] lg:gap-32 py-8 items-start">
                 <div className="flex flex-col gap-4">
                     <Link
                         href="/"
@@ -55,7 +55,7 @@ export const Footer = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col  gap-4">
+                <div className="flex flex-col gap-4">
                     <p className="text-base font-bold">Quick Links</p>
 
                     <nav className="mt-6 flex flex-col items-start gap-2">
@@ -75,7 +75,7 @@ export const Footer = () => {
                     </nav>
                 </div>
 
-                <div className="flex flex-col  gap-4">
+                <div className="flex flex-col gap-4">
                     <p className="text-base font-bold">Support</p>
 
                     <nav className="mt-6 flex flex-col items-start gap-2">
@@ -95,47 +95,14 @@ export const Footer = () => {
                     </nav>
                 </div>
 
-                <div className="flex flex-col gap-4">
-                    <p className="text-base font-bold">Stay Updated</p>
-
-                    <p className="mt-6 max-w-sm text-sm leading-6 text-foreground/75">
-                        Real stories, upcoming camps, and the moments your
-                        donation made possible. Straight to your inbox.
-                    </p>
-
-                    <form className="mt-6 flex items-center gap-3">
-                        <Input
-                            type="email"
-                            placeholder="Enter your email address"
-                            leftIcon={<FiMail size={18} />}
-                            fullWidth
-                        />
-
-                        <button
-                            type="submit"
-                            aria-label="Subscribe"
-                            className="
-                                group flex h-14 w-14 shrink-0
-                                items-center justify-center
-                                rounded-full bg-theme
-                                text-white
-                                transition-all duration-300
-                                hover:scale-105
-                                hover:bg-theme/90
-                                focus-visible:outline-none
-                                focus-visible:ring-2
-                                focus-visible:ring-theme/50
-                            "
-                        >
-                            <FiArrowUpRight
-                                size={21}
-                                className="
-                                    transition-transform duration-300
-                                    group-hover:rotate-45
-                                "
-                            />
-                        </button>
-                    </form>
+                <div className="relative mx-auto aspect-square w-full max-w-[280px] shrink-0 lg:mx-0 -mt-28 scale-125">
+                    <Image
+                        src={hands_cupped}
+                        alt="Blood donation illustration"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 280px"
+                        className="object-contain"
+                    />
                 </div>
             </section>
 

@@ -35,21 +35,27 @@ export function DropdownSelect({
 
             <DropdownMenuContent
                 align="start"
-                className="max-h-60 w-[var(--radix-dropdown-menu-trigger-width)] overflow-y-auto"
+                className="max-h-64 overflow-y-auto"
             >
                 {options.map((option) => {
                     const selected = option === value;
                     return (
                         <DropdownMenuItem
                             key={option}
-                            onSelect={() => onChange(option)}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                onChange(option);
+                                setOpen(false);
+                            }}
                             className={`flex items-center justify-between gap-2 ${
-                                selected ? "font-semibold" : ""
+                                selected
+                                    ? "font-semibold bg-theme text-white"
+                                    : ""
                             }`}
                         >
                             <span className="truncate">{option}</span>
                             {selected && (
-                                <LuCheck className="h-4 w-4 shrink-0 text-red-500" />
+                                <LuCheck className="h-4 w-4 shrink-0" />
                             )}
                         </DropdownMenuItem>
                     );
